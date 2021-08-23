@@ -1,0 +1,16 @@
+[package]
+name = "rust-node-blank"
+version = "0.1.0"
+description = "Node.js add-on example written in Rust"
+authors = ["Skitsanos"]
+license = "MIT"
+edition = "2018"
+exclude = ["bin/addon.node"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies.neon]
+version = "0.9"
+default-features = false
+features = ["napi-6"]
