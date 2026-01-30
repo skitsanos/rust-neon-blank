@@ -1,17 +1,17 @@
 # rust-node-blank
 
-**rust-node-blank:** Node.js add-on example written in Rust
+**rust-node-blank:** Rust add-on example for Bun (Node-API via Neon)
 
 This project was bootstrapped by [create-neon](https://www.npmjs.com/package/create-neon).
 
 ## Installing rust-node-blank
 
-Installing rust-node-blank requires a [supported version of Node and Rust](https://github.com/neon-bindings/neon#platform-support).
+Installing rust-node-blank requires Bun and a [supported version of Rust](https://github.com/neon-bindings/neon#platform-support).
 
-You can install the project with npm. In the project directory, run:
+You can install the project with Bun. In the project directory, run:
 
 ```sh
-$ npm install
+$ bun install
 ```
 
 This fully installs the project, including installing any dependencies and running the build.
@@ -21,20 +21,19 @@ This fully installs the project, including installing any dependencies and runni
 If you have already installed the project and only want to run the build, run:
 
 ```sh
-$ npm run build
+$ bun run build
 ```
 
 This command uses the [cargo-cp-artifact](https://github.com/neon-bindings/cargo-cp-artifact) utility to run the Rust build and copy the built library into `./bin/addon.node`.
 
 ## Exploring rust-node-blank
 
-After building rust-node-blank, you can explore its exports at the Node REPL:
+After building rust-node-blank, you can explore its exports using Bun:
 
 ```sh
-$ npm install
-$ node
-> require('.').hello()
-"hello from Rust"
+$ bun install
+$ bun -e "const addon = require('./bin/addon.node'); console.log(addon.hello())"
+hello from Rust
 ```
 
 ## Bun demos
@@ -52,15 +51,15 @@ $ bun demos/bun-fs.ts
 
 In the project directory, you can run:
 
-### `npm install`
+### `bun install`
 
-Installs the project, including running `npm run build`.
+Installs the project, including running `bun run build`.
 
-### `npm run build`
+### `bun run build`
 
 Builds the Node addon (`bin/addon.node`) from source.
 
-### `npm test`
+### `bun run test`
 
 Runs the unit tests by calling `cargo test`. You can learn more about [adding tests to your Rust code](https://doc.rust-lang.org/book/ch11-01-writing-tests.html) from the [Rust book](https://doc.rust-lang.org/book/).
 
@@ -101,7 +100,7 @@ Under the hood, a [Node addon](https://nodejs.org/api/addons.html) is a [dynamic
 
 ### package.json
 
-The npm [manifest file](https://docs.npmjs.com/cli/v7/configuring-npm/package-json), which informs the `npm` command.
+The package manifest file, used by Bun scripts and tooling.
 
 ### src/
 
@@ -121,4 +120,4 @@ To learn more about Neon, see the [Neon documentation](https://neon-bindings.com
 
 To learn more about Rust, see the [Rust documentation](https://www.rust-lang.org).
 
-To learn more about Node, see the [Node documentation](https://nodejs.org).
+To learn more about Bun, see the [Bun documentation](https://bun.sh/docs).
