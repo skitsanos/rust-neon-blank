@@ -1,5 +1,7 @@
 target
 index.node
+bin/addon.node
+demos/demo-output.txt
 **/node_modules
 **/.DS_Store
 npm-debug.log*

@@ -4,13 +4,13 @@ version = "0.1.0"
 description = "Node.js add-on example written in Rust"
 authors = ["Skitsanos"]
 license = "MIT"
-edition = "2018"
+edition = "2024"
+rust-version = "1.93"
 exclude = ["bin/addon.node"]
 
 [lib]
 crate-type = ["cdylib"]
 
 [dependencies.neon]
-version = "0.9"
-default-features = false
-features = ["napi-6"]
+version = "1.1.1"
+features = ["napi-latest"]
